@@ -1,0 +1,22 @@
+[general]
+import = ["~/.config/alacritty/themes/noctalia.toml"]
+
+[window]
+
+opacity = 0.85
+blur = true
+
+padding.x = 35
+padding.y = 35
+
+decorations = "None"
+
+[font]
+
+normal = { family = "JetBrains Mono Nerd Font", style = "Bold" }
+size = 12
+
+[cursor]
+
+style.shape = "Beam"
+style.blinking = "On"
