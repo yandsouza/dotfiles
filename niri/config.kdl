@@ -1,0 +1,182 @@
+include "basicsettings.kdl" // Added by niri-settings
+
+include "keybinds.kdl" // Added by niri-settings
+
+
+// ============================================================================
+// ANIMATIONS
+// ============================================================================
+
+animations {
+    //off
+
+    // Workspace switch: Match QS elementMove (~500ms, expressive overshoot)
+    // damping-ratio < 1 = overshoot (like QS bezier [0.38, 1.21, 0.22, 1.00])
+    workspace-switch {
+        spring damping-ratio=0.78 stiffness=600 epsilon=0.0001
+    }
+
+    // Window open: Match QS elementMoveEnter (~400ms, emphasized decel)
+    // Lower stiffness = slower start, smooth decel landing
+    window-open {
+        spring damping-ratio=0.82 stiffness=500 epsilon=0.0001
+    }
+
+    // Window close: Match QS elementMoveExit (~200ms, quick accel out)
+    // Higher stiffness = snappier, quick exit
+    window-close {
+        spring damping-ratio=0.88 stiffness=900 epsilon=0.0001
+    }
+
+    // Horizontal view: Smooth panning with slight overshoot
+    horizontal-view-movement {
+        spring damping-ratio=0.80 stiffness=550 epsilon=0.0001
+    }
+
+    // Window movement: Interactive feel, responsive with gentle settle
+    window-movement {
+        spring damping-ratio=0.85 stiffness=650 epsilon=0.0001
+    }
+
+    // Column/window resize: Match QS elementResize (~300ms)
+    window-resize {
+        spring damping-ratio=0.88 stiffness=700 epsilon=0.0001
+    }
+
+    // Config notification: Quick feedback
+    config-notification-open-close {
+        spring damping-ratio=0.90 stiffness=800 epsilon=0.0001
+    }
+
+    // Screenshot UI: Snappy like QS fast effects
+    screenshot-ui-open {
+        spring damping-ratio=0.85 stiffness=750 epsilon=0.0001
+    }
+}
+
+// ============================================================================
+// LAYOUT
+// ============================================================================`
+
+layout {
+  background-color "transparent"
+}
+
+// Set the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}	
+
+window-rule {
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}
+
+// ============================================================================
+// WINDOW RULES
+// ============================================================================
+
+window-rule {
+  // Rounded corners for a modern look.
+  geometry-corner-radius 20
+
+  // Clips window contents to the rounded corner boundaries.
+  clip-to-geometry true
+}
+
+window-rule {
+    match app-id="^Alacritty$"
+    background-effect {
+        blur true
+        noise 0.05
+        saturation 2
+    }
+}
+
+window-rule {
+    match app-id="^kitty$"
+
+    background-effect {
+        blur true
+        noise 0.05
+        saturation 2
+    }
+}
+
+window-rule {
+    match app-id="^zen$"
+
+    background-effect {
+        blur true
+        noise 0.05
+        saturation 2
+    }
+}
+
+window-rule {
+    match app-id="^org.gnome.Calculator$"
+    open-floating true
+    default-window-height { fixed 360; }
+    default-column-width { fixed 360; }
+}
+
+// ============================================================================
+// ENVIRONMENT
+// ============================================================================
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+
+environment {
+  QT_QPA_PLATFORMTHEME "qt6ct"
+}
+
+output "eDP-1" {
+    mode "1920x1200@60.002"
+    scale 1.125
+}
+
+// ============================================================================
+// STARTUP
+// ============================================================================
+
+//spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+
+spawn-at-startup "noctalia"
+
+// Floating Noctalia settings window.
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-window-height { fixed 1000; }
+  default-column-width { fixed 320; }
+}
+
+
+include "noctalia.kdl"
