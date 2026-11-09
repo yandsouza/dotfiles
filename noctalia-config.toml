@@ -1,0 +1,302 @@
+[backdrop]
+enabled = true
+
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    background_opacity = 0.4999999888241291
+    capsule = true
+    capsule_border_width = 0.5
+    center = [ "media", "clock", "spacer_2", "weather", "audio_visualizer" ]
+    contact_shadow = true
+    end = [ "tray", "notifications", "bluetooth", "network", "volume", "battery", "control-center", "session" ]
+    font_family = "Google Sans Flex"
+    font_scale = 0.9499999862164259
+    font_weight = 400
+    margin_ends = 0
+    start = [ "launcher", "workspaces", "taskbar", "sysmon" ]
+
+[battery.device."/org/freedesktop/UPower/devices/headset_dev_B2_86_54_02_76_EB"]
+warning_threshold = 50
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [
+    "desktop-widget-0000000000000001",
+    "desktop-widget-0000000000000002",
+    "desktop-widget-0000000000000003",
+    "desktop-widget-0000000000000004"
+]
+
+    [desktop_widgets.grid]
+    cell_size = 32
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 192.0
+    box_width = 384.0
+    cx = 853.5
+    cy = 305.87332153320312
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = -0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        clock_style = "digital"
+        font_family = "SF Pro Rounded"
+        shadow = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 64.0
+    box_width = 256.0
+    cx = 853.5
+    cy = 561.953369140625
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = false
+        bands = 32
+        centered = false
+        reversed = false
+        show_when_idle = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 96.0
+    box_width = 192.0
+    cx = 853.5
+    cy = 405.45999145507812
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "weather"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background = false
+        font_family = "SF Pro Rounded"
+        show_forecast = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 224.0
+    box_width = 256.0
+    cx = 853.5
+    cy = 732.67333984375
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "media_player"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        album_art_background = false
+        audio_visualizer = false
+        background = false
+        font_family = "SF Pro Rounded"
+        hide_when_no_media = true
+        layout = "horizontal"
+        shadow = true
+
+[dock]
+enabled = true
+reserve_space = false
+smart_auto_hide = true
+
+[location]
+address = "Santo Andre"
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001", "lockscreen-widget-0000000000000002" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 32
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 853.5
+    cy = 905.17169189453125
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 240.0
+    box_width = 416.0
+    cx = 853.5
+    cy = 291.64663696289062
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        font_family = "SF Pro Rounded"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 853.5
+    cy = 533.5
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        shadow = true
+
+[nightlight]
+enabled = true
+temperature_night = 5500
+
+[plugin_settings."blackbartblues/keymap"]
+compositor = "niri"
+
+[plugin_settings."nomadcxx/gamer-mode"]
+profile = "heavy"
+
+[plugins]
+enabled = []
+
+[shell]
+font_family = "Google Sans Flex"
+niri_overview_type_to_launch_enabled = true
+polkit_agent = true
+settings_expand_all_groups = true
+settings_window_translucent = true
+
+    [shell.launcher]
+    app_grid = true
+    category_icons_only = true
+    layout = "simple"
+
+    [shell.panel]
+    open_near_click_control_center = true
+    transparency_mode = "glass"
+
+    [shell.screen_corners]
+    enabled = true
+
+[theme]
+builtin = "Noctalia"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "vibrant"
+
+    [theme.templates]
+    builtin_ids = [ "alacritty", "gtk3", "gtk4", "kcolorscheme", "kitty", "niri", "qt" ]
+
+[wallpaper]
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+
+    [wallpaper.default]
+    path = "/home/monofone/Pictures/Wallpapers/Zen/Distort/2.jpg"
+
+    [wallpaper.last]
+    path = "/home/monofone/Pictures/Wallpapers/Zen/Distort/2.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/monofone/Pictures/Wallpapers/Zen/Distort/2.jpg"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/monofone/Pictures/Wallpapers/Zen/Distort/2.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "vibrant"
+
+[widget.audio_visualizer]
+bands = 32
+width = 220
+
+[widget.bluetooth]
+hide_when_no_connected_device = true
+
+[widget.brightness]
+show_label = false
+
+[widget.clock]
+format = "{:%a %d %b %H:%M}"
+
+[widget.media]
+hide_when_idle = true
+hide_when_no_media = true
+show_progress = true
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
+
+[widget.spacer_2]
+anchor = true
+length = 6
+type = "spacer"
+
+[widget.tray]
+drawer = true
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_condition = false
